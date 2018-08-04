@@ -31,8 +31,10 @@ class App extends Component {
   };
 
   render() {
-    const { valueInput, data } = this.state;
-    console.log('data =>', data);
+    const {
+      valueInput,
+      data: { city, list },
+    } = this.state;
     return (
       <div>
         <h1>React Wend</h1>
@@ -41,7 +43,7 @@ class App extends Component {
           change={e => this.setState({ valueInput: e.target.value })}
           valueInput={valueInput}
         />
-        <Output />
+        <Output city={city} list={list} />
         <Footer />
       </div>
     );
