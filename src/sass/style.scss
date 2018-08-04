@@ -4,7 +4,57 @@ html, body{
 	-webkit-font-smoothing: subpixel-antialiased;
 	background-color: #1c78c0;
 	font-family: 'Ubuntu', sans-serif;
+	color: #333333;
 	text-align: center;
+}
+
+h1{
+	text-shadow: 1px 1px 2px #8ed6fb;
+}
+
+.inputWeather{
+	margin-bottom: 20px;
+	label, input{
+		display: block;
+	}
+	input{
+		margin: 0 auto;
+		padding: 8px 10px;
+		min-width: 300px;
+		border: none;
+		margin-top: 10px;
+		border-radius: 5px;
+		background-color: #caecfd;
+		color: #262626;
+		&:focus{
+			outline: none;
+		}
+	}
+}
+
+.output{
+	& > p {
+		text-align: center;
+	}
+	ul{
+		padding: 0;
+		max-width: 50%;
+		margin: 0 auto;
+		list-style-type: none;
+	}
+}
+
+.displayDay{
+	border: 1px solid #333333;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	transition: .2s all ease-in-out;
+	box-sizing: border-box;
+	&:hover{
+		border-color: #caecfd;
+		color: #caecfd;
+		background: #caecfd4f;
+	}
 }
 
 footer{
@@ -12,7 +62,7 @@ footer{
 	position: absolute;
 	width: 100%;
 	bottom: 20px;
-	border: 1px solid red;
+	text-align: center;
 	a{
 		color: white;
 		&:hover{

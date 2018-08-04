@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Input = ({ keypres, valueInput, change }) => (
-  <div>
+  <div className="inputWeather">
     <label htmlFor="city">
       Check the forecast for the next 5 days
       <input

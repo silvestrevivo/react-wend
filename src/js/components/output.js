@@ -16,8 +16,8 @@ const Output = ({ city, list }) => {
     });
 
     return (
-      <div>
-        <div>The forecast for {city.name} for the next 5 days is:</div>
+      <div className="output">
+        <p>The forecast for {city.name} for the next 5 days is:</p>
         <ul>{displayDays}</ul>
       </div>
     );

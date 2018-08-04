@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DisplayDay = ({ date, weather }) => (
-  <li>
+  <li className="displayDay">
     <p>{date}</p>
     <p>{weather}</p>
   </li>
