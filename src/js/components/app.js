@@ -6,20 +6,41 @@ import Input from './input';
 import Output from './output';
 import Footer from './footer';
 
-const URL = `https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${API_KEY}`;
+const URL = `https://api.openweathermap.org/data/2.5/forecast?q=`;
+// we import de API_KEY from a hide file in the repo
 
 class App extends Component {
-  state = {};
+  state = {
+    valueInput: '',
+    data: {},
+  };
 
-  componentDidMount() {
-    axios.get(URL).then(response => console.log(response.data));
-  }
+  handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      const { valueInput } = this.state;
+      axios
+        .get(`${URL}${valueInput}&appid=${API_KEY}`)
+        .then(response => {
+          this.setState({
+            data: response.data,
+            valueInput: '',
+          });
+        })
+        .catch(error => console.log(error));
+    }
+  };
 
   render() {
+    const { valueInput, data } = this.state;
+    console.log('data =>', data);
     return (
       <div>
         <h1>React Wend</h1>
-        <Input />
+        <Input
+          keypres={this.handleKeyPress}
+          change={e => this.setState({ valueInput: e.target.value })}
+          valueInput={valueInput}
+        />
         <Output />
         <Footer />
       </div>
