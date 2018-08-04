@@ -7,31 +7,16 @@ html, body{
 	text-align: center;
 }
 
-.container{
-	height: 100vh;
-	h1{
-		color: #8ed6fb;
-		font-size: 50px;
-		text-shadow: 1px 2px 2px #545454;
-		transform: translateY(50px);
-	}
-	img{
-		width: 40%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	footer{
+footer{
+	color: white;
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	border: 1px solid red;
+	a{
 		color: white;
-		position: absolute;
-		width: 100%;
-		bottom: 20px;
-		a{
-			color: white;
-			&:hover{
-				color: #8ed6fb;
-			}
+		&:hover{
+			color: #8ed6fb;
 		}
 	}
 }
