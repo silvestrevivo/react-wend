@@ -1,21 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import moment from 'moment';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import DisplayDay from './displayDay';
 
-const Output = ({ city, list }) => {
-  const emptyObject = Object.keys(city).length === 0 && city.constructor === Object;
+const Output = props => {
+  const {
+    weather,
+    weather: { city, list },
+  } = props;
+  const emptyObject = Object.keys(weather).length === 0 && weather.constructor === Object;
 
   if (!emptyObject && list.length > 0) {
     const filterDay = list.filter(x => x.dt_txt.includes('00:00:00'));
 
     const displayDays = filterDay.map((item, i) => {
       const date = moment(item.dt_txt).format('dddd, MMMM Do');
-      const weather = item.weather[0].main;
+      const weatherData = item.weather[0].main;
       return (
         <CSSTransition classNames="displayDay" timeout={10} appear key={i}>
-          <DisplayDay date={date} weather={weather} delay={i} />
+          <DisplayDay date={date} weather={weatherData} delay={i} />
         </CSSTransition>
       );
     });
@@ -34,13 +39,20 @@ const Output = ({ city, list }) => {
 };
 
 Output.propTypes = {
-  city: PropTypes.object,
-  list: PropTypes.array,
+  weather: PropTypes.object,
 };
 
 Output.defaultProps = {
-  city: {},
-  list: [],
+  weather: {},
 };
 
-export default Output;
+function mapStateToProps(state) {
+  return {
+    weather: state.weather,
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Output);

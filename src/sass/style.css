@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: #1c78c0;
+  font-family: 'Ubuntu', sans-serif;
+  color: #333333;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 1px 1px 2px #8ed6fb;
+}
+
+.inputWeather {
+  margin-bottom: 20px;
+}
+
+.inputWeather label, .inputWeather input {
+  display: block;
+}
+
+.inputWeather input {
+  margin: 0 auto;
+  padding: 8px 10px;
+  min-width: 300px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #caecfd;
+  color: #262626;
+}
+
+.inputWeather input:focus {
+  outline: none;
+}
+
+.output > p {
+  text-align: center;
+}
+
+.output ul {
+  padding: 0;
+  max-width: 50%;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.displayDay {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+  opacity: 0;
+}
+
+.displayDay-enter-done {
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.displayDay:hover {
+  border-color: #caecfd;
+  color: #caecfd;
+  background-color: #caecfd4f;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #8ed6fb;
+}
+/*# sourceMappingURL=style.css.map */
