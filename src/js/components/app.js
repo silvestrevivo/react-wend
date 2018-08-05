@@ -18,6 +18,7 @@ class App extends Component {
   handleKeyPress = event => {
     if (event.key === 'Enter') {
       const { valueInput } = this.state;
+      this.setState({ data: {} });
       axios
         .get(`${URL}${valueInput}&appid=${API_KEY}`)
         .then(response => {
